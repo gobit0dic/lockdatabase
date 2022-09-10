@@ -7,7 +7,6 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Lock {
-
     private String NAME;
     private LocalDateTime DATETIME;
     private Integer NUMPINS;
