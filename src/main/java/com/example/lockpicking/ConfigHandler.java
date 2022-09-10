@@ -8,6 +8,7 @@ public class ConfigHandler {
 
     private static ConfigHandler configHandler;
     public static Config config;
+    public static final String path = System.getProperty("user.dir") + "/ressources/config.json";
 
     private ConfigHandler(){
         this.readConfigFile();
@@ -15,8 +16,7 @@ public class ConfigHandler {
 
     private void readConfigFile(){
         ObjectMapper objectMapper = new ObjectMapper();
-        String workingDir = System.getProperty("user.dir");
-        File file = new File(workingDir + "/ressources/config.json");
+        File file = new File(this.path);
         try{
             this.config = objectMapper.readValue(
                     file, Config.class
