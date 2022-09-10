@@ -5,6 +5,8 @@ import java.util.Map;
 import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.List;
+import java.io.File;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class Lock {
     private String NAME;
@@ -14,41 +16,13 @@ public class Lock {
     private String PICK;
     private Map<Integer, String> PINMAPPING;
     private String TYPE;
-
-    //TODO Read from Config File
-    private String[] WRENCHTYPES = new String[]{
-            "MP3SP11",
-            "MP3SP12",
-            "MP3SP13",
-            "MP3SP14",
-            "MP3SP15",
-            "MP3SP16",
-            "MP3SP17"
-    };
-
-    private String[] PICKTYPES = new String[]{
-            "PNF04",
-            "PNF05",
-            "PNF06",
-            "PNF31",
-            "PNF58",
-            "PNF60",
-    };
-
-    private String[] LOCKTYPES = new String[]{
-            "Padlock - Pins",
-            "Padlock - Disc",
-            "Wafer Core"
-    };
-
-    private String[] PINTYPES = new String[]{
-            "Normal",
-            "Hybrid",
-            "Spool",
-            "Serated"
-    };
+    private String[] WRENCHTYPES;
+    private String[] PICKTYPES;
+    private String[] LOCKTYPES;
+    private String[] PINTYPES;
 
     public Lock(){
+        this.setLockAttributes();
     }
 
     public String getName(){
@@ -121,6 +95,14 @@ public class Lock {
 
     public void setPinMap(Map<Integer, String> pinMap){
         this.PINMAPPING = pinMap;
+    }
+
+    public void setLockAttributes(){
+        ConfigHandler configHandler = ConfigHandler.getInstance();
+        this.WRENCHTYPES = configHandler.config.wrenches;
+        this.PICKTYPES = configHandler.config.picks;
+        this.LOCKTYPES = configHandler.config.locks;
+        this.PINTYPES = configHandler.config.pins;
     }
 
 }
