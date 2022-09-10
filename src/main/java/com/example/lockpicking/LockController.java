@@ -9,8 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class LockController {
 
     @GetMapping("/lockattributes")
-    public DTOPossibleLockAttributes getLockAttributes(
-    ) {
+    public DTOPossibleLockAttributes getLockAttributes() {
         DTOPossibleLockAttributes lockAttributes = LockAttributes.getAllPossibleLockAttributes();
         return lockAttributes;
     }

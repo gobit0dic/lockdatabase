@@ -72,9 +72,8 @@ public class Lock {
         return this.PICK;
     }
 
-    public String getPinMapping(Integer NumPin){
-        String PinValue = this.PINMAPPING.get(NumPin);
-        return PinValue;
+    public Map<Integer, String> getPinMapping(){
+        return this.PINMAPPING;
     }
 
     public String getType(){
@@ -99,6 +98,30 @@ public class Lock {
 
     public void setName(String name){
         this.NAME = name;
+    }
+
+    public void setWrench(String wrenchName){
+        this.WRENCH = wrenchName;
+    }
+
+    public void setPick(String pickName){
+        this.PICK = pickName;
+    }
+
+    public void setType(String typeName){
+        this.TYPE = typeName;
+    }
+
+    public void setNumPins(Integer numPins){
+        this.NUMPINS = numPins;
+    }
+
+    public void setDateTime(LocalDateTime DateTime){
+        this.DATETIME = DateTime;
+    }
+
+    public void setPinMap(Map<Integer, String> pinMap){
+        this.PINMAPPING = pinMap;
     }
 
 }

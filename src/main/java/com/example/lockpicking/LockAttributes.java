@@ -11,4 +11,5 @@ public class LockAttributes {
         dto.PINTYPES = lock.getPinTypes();
         return dto;
     }
+
 }
