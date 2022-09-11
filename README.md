@@ -16,13 +16,13 @@ Similar for the data model. The entity objects should not interact with the busi
 The business logic should just use DTO to perform action. 
 With this approach, I can change the API layer or data layer in future without having to change the business logic.
 
-### Known flats
+### Known flats of the data structure
 - I decided to use local json files instead of e.g. a h2 database. I do this to train e.g. I/O of files, as well as parsing.
-- 
+- Because of not using h2, I have to generate the links in the payload by myself
+- I could read the json, load it into h2 database and then use this in further logic
 
 ### User Story 
 The idea is to build a simple app to create and read records which represents locks. 
-As somebody doing lockpicking as a hobby, you will deal with a lot of lots while practicing.
+As somebody doing lockpicking as a hobby, you will deal with a lot of locks while practicing.
 The goal is to safe each lock you opened in a simple way. 
-In addition, you want to retrieve the locks and get some saved attributes. 
-Like number of pins or type of lock. 
+In addition, you want to retrieve the locks and get some saved attributes like number of pins or type of lock. 
