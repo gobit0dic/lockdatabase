@@ -69,4 +69,12 @@ public class DTOLockTests {
         assert(pinMapGet == pinMapSet);
     }
 
+    @Test
+    public void getId(){
+        String setId = "1";
+        this.DTOLock.setId(setId);
+        String idGet = this.DTOLock.getId();
+        assert(idGet == setId);
+    }
+
 }

@@ -48,6 +48,10 @@ public class DTOLock implements DTO{
         return this.TYPE;
     }
 
+    public void setId(String id){
+        this.Id = id;
+    }
+
     public void setName(String name){
         this.NAME = name;
     }
