@@ -13,14 +13,27 @@ import java.nio.file.StandardOpenOption;
 public class LockRecordHandler {
 
     //TODO Dynamic for each user new file
-    public static final String path = System.getProperty("user.dir") + "/moackDatabase/locks/locks.json";
+    public static final String path = System.getProperty("user.dir") + "/mockDatabase/locks/";
+    public String filename;
+    public String finalPath;
+
+    public void setFilename(String filename){
+        this.filename = filename;
+        this.finalPath = path + filename;
+    }
+
+    public String getFinalPath(){
+        return this.finalPath;
+    }
 
     public void createFileIfNotExists(){
-        File file = new File(this.path);
+        File file = new File(this.finalPath);
         if(!file.exists() && !file.isDirectory()) {
             try{
                 boolean success = file.createNewFile();
-            }catch(Exception e){}
+            }catch(Exception e){
+                System.out.println(e);
+            }
         }
     }
 
@@ -28,12 +41,13 @@ public class LockRecordHandler {
         String contentToAppend = jsonString + System.lineSeparator();
         try {
             Files.write(
-                Paths.get(this.path),
+                Paths.get(this.finalPath),
                 contentToAppend.getBytes(),
                 StandardOpenOption.APPEND
             );
             return true;
         }catch (Exception e){
+            System.out.println(e);
             return false;
         }
     }
