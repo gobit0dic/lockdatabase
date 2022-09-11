@@ -24,19 +24,14 @@ public class LockRecordHandler {
         }
     }
 
-    public String dtoToString(DTOLockRecord lockRecord){
-        String dtoString = "";
-
-        return dtoString;
-    }
-
     public Boolean writeRecord(String jsonString){
         String contentToAppend = jsonString + System.lineSeparator();
         try {
             Files.write(
-                    Paths.get(this.path),
-                    contentToAppend.getBytes(),
-                    StandardOpenOption.APPEND);
+                Paths.get(this.path),
+                contentToAppend.getBytes(),
+                StandardOpenOption.APPEND
+            );
             return true;
         }catch (Exception e){
             return false;
