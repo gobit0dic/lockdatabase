@@ -1,0 +1,30 @@
+{
+  "picks" : [
+    "PNF04",
+    "PNF05",
+    "PNF06",
+    "PNF31",
+    "PNF58",
+    "PNF60"
+  ],
+  "wrenches" : [
+    "MP3SP11",
+    "MP3SP12",
+    "MP3SP13",
+    "MP3SP14",
+    "MP3SP15",
+    "MP3SP16",
+    "MP3SP17"
+  ],
+  "locks" : [
+    "Padlock - Pins",
+    "Padlock - Disc",
+    "Wafer Lock"
+  ],
+  "pins" : [
+    "Normal",
+    "Hybrid",
+    "Spool",
+    "Serated"
+  ]
+}

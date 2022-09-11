@@ -10,7 +10,7 @@ public class LockControllerTests {
 
     @Test
     public void getLockAttributes(){
-      DTOPossibleLockAttributes dto = this.controller.getLockAttributes();
+      PossibleLockAttributes dto = this.controller.getLockAttributes();
       assert(dto.PICKTYPES.length != 0);
     }
 }

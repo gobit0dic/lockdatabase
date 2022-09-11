@@ -1,16 +1,18 @@
 package com.example.lockpicking;
-import java.util.concurrent.atomic.AtomicLong;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class LockController {
 
     @GetMapping("/lockattributes")
-    public DTOPossibleLockAttributes getLockAttributes() {
-        DTOPossibleLockAttributes lockAttributes = LockAttributes.getAllPossibleLockAttributes();
+    public PossibleLockAttributes getLockAttributes() {
+        PossibleLockAttributes lockAttributes = PossibleLockAttributes.getInstance();
         return lockAttributes;
     }
+
+    /*@PostMapping("/lock")
+    public Boolean writeLockRecord() {
+        DTOPossibleLockAttributes lockAttributes = LockAttributes.getAllPossibleLockAttributes();
+        return lockAttributes;
+    }*/
 }

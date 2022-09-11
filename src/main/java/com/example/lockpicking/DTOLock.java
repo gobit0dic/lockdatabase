@@ -1,12 +1,11 @@
 package com.example.lockpicking;
 
-import java.util.EnumMap;
 import java.util.Map;
 import java.time.LocalDateTime;
-import java.util.Arrays;
-import java.util.List;
 
-public class Lock {
+public class DTOLock implements DTO{
+
+    private String Id;
     private String NAME;
     private LocalDateTime DATETIME;
     private Integer NUMPINS;
@@ -15,42 +14,12 @@ public class Lock {
     private Map<Integer, String> PINMAPPING;
     private String TYPE;
 
-    //TODO Read from Config File
-    private String[] WRENCHTYPES = new String[]{
-            "MP3SP11",
-            "MP3SP12",
-            "MP3SP13",
-            "MP3SP14",
-            "MP3SP15",
-            "MP3SP16",
-            "MP3SP17"
-    };
-
-    private String[] PICKTYPES = new String[]{
-            "PNF04",
-            "PNF05",
-            "PNF06",
-            "PNF31",
-            "PNF58",
-            "PNF60",
-    };
-
-    private String[] LOCKTYPES = new String[]{
-            "Padlock - Pins",
-            "Padlock - Disc",
-            "Wafer Core"
-    };
-
-    private String[] PINTYPES = new String[]{
-            "Normal",
-            "Hybrid",
-            "Spool",
-            "Serated"
-    };
-
-    public Lock(){
+    public DTOLock(){
     }
 
+    public String getId(){
+        return this.Id;
+    }
     public String getName(){
         return this.NAME;
     }
@@ -79,20 +48,8 @@ public class Lock {
         return this.TYPE;
     }
 
-    public String[] getWrenchTypes(){
-        return this.WRENCHTYPES;
-    }
-
-    public String[] getPickTypes(){
-        return this.PICKTYPES;
-    }
-
-    public String[] getLockTypes(){
-        return this.LOCKTYPES;
-    }
-
-    public String[] getPinTypes(){
-        return this.PINTYPES;
+    public void setId(String id){
+        this.Id = id;
     }
 
     public void setName(String name){
