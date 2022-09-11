@@ -14,15 +14,15 @@ public class FacadeLockRecordTests {
     public void createRecordPositive(){
         FacadeLockRecord facadeLockRecord = new FacadeLockRecord();
         DTOLockRecord lockRecord = new DTOLockRecord();
-        DTOLock DTOLock = new DTOLock();
-        DTOLock.setId("1");
-        DTOLock.setName("Test");
+        Lock Lock = new Lock();
+        Lock.setId("1");
+        Lock.setName("Test");
 
         Links links = new Links();
         links.selfhref = "TestURL";
         links.lockhref = "TesterURL";
 
-        lockRecord.DTOLock = DTOLock;
+        lockRecord.DTOLock = Lock;
         lockRecord._links = links;
 
         String fileName = "Test.json";

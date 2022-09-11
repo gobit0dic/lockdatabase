@@ -8,55 +8,55 @@ import java.util.HashMap;
 import java.util.Map;
 
 @SpringBootTest
-public class DTOLockTests {
+public class LockTests {
 
-    public DTOLock DTOLock = new DTOLock();
+    public Lock Lock = new Lock();
 
     @Test
     public void getSetName(){
         String nameSet = "TestName";
-        this.DTOLock.setName(nameSet);
-        String name = this.DTOLock.getName();
+        this.Lock.setName(nameSet);
+        String name = this.Lock.getName();
         assert(name == nameSet);
     }
 
     @Test
     public void getSetNumPins(){
         Integer numSet = 10;
-        this.DTOLock.setNumPins(numSet);
-        Integer numGet = this.DTOLock.getNumPins();
+        this.Lock.setNumPins(numSet);
+        Integer numGet = this.Lock.getNumPins();
         assert(numSet == numGet);
     }
 
     @Test
     public void getSetWrench(){
         String nameSet = "TestWrench";
-        this.DTOLock.setWrench(nameSet);
-        String name = this.DTOLock.getWrench();
+        this.Lock.setWrench(nameSet);
+        String name = this.Lock.getWrench();
         assert(name == nameSet);
     }
 
     @Test
     public void getSetPick(){
         String nameSet = "TestPick";
-        this.DTOLock.setPick(nameSet);
-        String name = this.DTOLock.getPick();
+        this.Lock.setPick(nameSet);
+        String name = this.Lock.getPick();
         assert(name == nameSet);
     }
 
     @Test
     public void getSetType(){
         String nameSet = "TestType";
-        this.DTOLock.setType(nameSet);
-        String name = this.DTOLock.getType();
+        this.Lock.setType(nameSet);
+        String name = this.Lock.getType();
         assert(name == nameSet);
     }
 
     @Test
     public void getSetDateTime(){
         LocalDateTime dateTimeSet = LocalDateTime.now();
-        this.DTOLock.setDateTime(dateTimeSet);
-        LocalDateTime dateTime = this.DTOLock.getDateTime();
+        this.Lock.setDateTime(dateTimeSet);
+        LocalDateTime dateTime = this.Lock.getDateTime();
         assert(dateTime == dateTimeSet);
     }
 
@@ -64,16 +64,16 @@ public class DTOLockTests {
     public void getSetPinMap(){
         Map<Integer, String> pinMapSet = new HashMap<Integer, String>();
         pinMapSet.put(1, "Test");
-        this.DTOLock.setPinMap(pinMapSet);
-        Map<Integer, String> pinMapGet = this.DTOLock.getPinMapping();
+        this.Lock.setPinMap(pinMapSet);
+        Map<Integer, String> pinMapGet = this.Lock.getPinMapping();
         assert(pinMapGet == pinMapSet);
     }
 
     @Test
     public void getId(){
         String setId = "1";
-        this.DTOLock.setId(setId);
-        String idGet = this.DTOLock.getId();
+        this.Lock.setId(setId);
+        String idGet = this.Lock.getId();
         assert(idGet == setId);
     }
 

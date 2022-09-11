@@ -3,7 +3,7 @@ package com.example.lockpicking;
 import java.util.Map;
 import java.time.LocalDateTime;
 
-public class DTOLock implements DTO{
+public class Lock implements DTO{
 
     private String Id;
     private String NAME;
@@ -14,7 +14,7 @@ public class DTOLock implements DTO{
     private Map<Integer, String> PINMAPPING;
     private String TYPE;
 
-    public DTOLock(){
+    public Lock(){
     }
 
     public String getId(){
