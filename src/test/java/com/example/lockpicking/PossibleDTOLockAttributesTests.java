@@ -4,11 +4,11 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-public class LockAttributesTests {
+public class PossibleDTOLockAttributesTests {
 
     @Test
-    public void getAllPossibleLockAttributes(){
-        DTOPossibleLockAttributes dto = LockAttributes.getAllPossibleLockAttributes();
+    public void positiveTest(){
+        PossibleLockAttributes dto = PossibleLockAttributes.getInstance();
         assert(dto.PINTYPES.length != 0);
         assert(dto.LOCKTYPES.length != 0);
         assert(dto.WRENCHTYPES.length != 0);

@@ -1,14 +1,11 @@
 package com.example.lockpicking;
 
-import java.util.EnumMap;
 import java.util.Map;
 import java.time.LocalDateTime;
-import java.util.Arrays;
-import java.util.List;
-import java.io.File;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
-public class Lock {
+public class DTOLock implements DTO{
+
+    private String Id;
     private String NAME;
     private LocalDateTime DATETIME;
     private Integer NUMPINS;
@@ -16,15 +13,13 @@ public class Lock {
     private String PICK;
     private Map<Integer, String> PINMAPPING;
     private String TYPE;
-    private String[] WRENCHTYPES;
-    private String[] PICKTYPES;
-    private String[] LOCKTYPES;
-    private String[] PINTYPES;
 
-    public Lock(){
-        this.setLockAttributes();
+    public DTOLock(){
     }
 
+    public String getId(){
+        return this.Id;
+    }
     public String getName(){
         return this.NAME;
     }
@@ -53,22 +48,6 @@ public class Lock {
         return this.TYPE;
     }
 
-    public String[] getWrenchTypes(){
-        return this.WRENCHTYPES;
-    }
-
-    public String[] getPickTypes(){
-        return this.PICKTYPES;
-    }
-
-    public String[] getLockTypes(){
-        return this.LOCKTYPES;
-    }
-
-    public String[] getPinTypes(){
-        return this.PINTYPES;
-    }
-
     public void setName(String name){
         this.NAME = name;
     }
@@ -95,14 +74,6 @@ public class Lock {
 
     public void setPinMap(Map<Integer, String> pinMap){
         this.PINMAPPING = pinMap;
-    }
-
-    public void setLockAttributes(){
-        ConfigHandler configHandler = ConfigHandler.getInstance();
-        this.WRENCHTYPES = configHandler.config.wrenches;
-        this.PICKTYPES = configHandler.config.picks;
-        this.LOCKTYPES = configHandler.config.locks;
-        this.PINTYPES = configHandler.config.pins;
     }
 
 }

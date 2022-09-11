@@ -4,13 +4,13 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-public class LockControllerTests {
+public class DTOLockControllerTests {
 
     public LockController controller = new LockController();
 
     @Test
     public void getLockAttributes(){
-      DTOPossibleLockAttributes dto = this.controller.getLockAttributes();
+      PossibleLockAttributes dto = this.controller.getLockAttributes();
       assert(dto.PICKTYPES.length != 0);
     }
 }
