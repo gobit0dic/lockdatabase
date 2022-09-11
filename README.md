@@ -26,3 +26,19 @@ The idea is to build a simple app to create and read records which represents lo
 As somebody doing lockpicking as a hobby, you will deal with a lot of locks while practicing.
 The goal is to safe each lock you opened in a simple way. 
 In addition, you want to retrieve the locks and get some saved attributes like number of pins or type of lock. 
+
+
+### Todo
+- Software Architecture Diagram to ReadMe
+- Read from file to memory
+- Calculate next Item ID
+- Unit Test for LockpickingApplication
+- Endpoint for writing to Database
+- Endpoint for reading single item
+- Endpoint for reading all items
+- Using h2 database
+
+### Ideas for future development
+- Multi-tenancy feature with login
+- oAuth / FIDO authentication
+- React frontend
