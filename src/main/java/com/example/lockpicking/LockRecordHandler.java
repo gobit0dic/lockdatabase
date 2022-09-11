@@ -37,6 +37,14 @@ public class LockRecordHandler {
         }
     }
 
+    public boolean checkRecordForValues(DTOLockRecord lockRecord){
+        if(lockRecord.DTOLock == null && lockRecord._links == null){
+            return false;
+        }else{
+            return true;
+        }
+    }
+
     public Boolean writeRecord(String jsonString){
         String contentToAppend = jsonString + System.lineSeparator();
         try {
