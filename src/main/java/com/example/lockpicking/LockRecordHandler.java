@@ -26,6 +26,11 @@ public class LockRecordHandler {
         return this.finalPath;
     }
 
+    public String generateId(){
+        //TODO
+        return new String();
+    }
+
     public void createFileIfNotExists(){
         File file = new File(this.finalPath);
         if(!file.exists() && !file.isDirectory()) {
