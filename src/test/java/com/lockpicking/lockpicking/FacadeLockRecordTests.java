@@ -1,6 +1,8 @@
 package com.lockpicking.lockpicking;
 
+import com.lockpicking.lockEntries.FacadeLockRecord;
 import com.lockpicking.lockEntries.Lock;
+import com.lockpicking.lockEntries.LockRecordHandler;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 

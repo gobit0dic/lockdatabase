@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class LockController {
 
+    //TODO RESTful
     @GetMapping("/lockattributes")
     public LockAttribute getLockAttributes() {
         LockAttribute lockAttributes = LockAttributeServiceImpl.getLockAttributes();
