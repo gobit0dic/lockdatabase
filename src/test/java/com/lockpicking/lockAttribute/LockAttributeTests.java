@@ -1,6 +1,7 @@
 package com.lockpicking.lockAttribute;
 
 import com.lockpicking.lockAttribute.LockAttribute;
+import com.lockpicking.lockEntries.Lock;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -8,12 +9,39 @@ import org.springframework.boot.test.context.SpringBootTest;
 public class LockAttributeTests {
 
     @Test
-    public void tests(){
+    public void getSetLock(){
+        String[] str = new String[]{"TestName"};
         LockAttribute lockAttribute = new LockAttribute();
-        lockAttribute.picks = new String[]{};
-        lockAttribute.wrenches = new String[]{};
-        lockAttribute.locks = new String[]{};
-        lockAttribute.pins = new String[]{};
+        lockAttribute.setLockTypes(str);
+        String[] returnStr = lockAttribute.getLockTypes();
+        assert(returnStr == str);
+    }
+
+    @Test
+    public void getSetPins(){
+        String[] str = new String[]{"TestName"};
+        LockAttribute lockAttribute = new LockAttribute();
+        lockAttribute.setPinTypes(str);
+        String[] returnStr = lockAttribute.getPinTypes();
+        assert(returnStr == str);
+    }
+
+    @Test
+    public void getSetWrench(){
+        String[] str = new String[]{"TestName"};
+        LockAttribute lockAttribute = new LockAttribute();
+        lockAttribute.setWrenchTypes(str);
+        String[] returnStr = lockAttribute.getWrenchTypes();
+        assert(returnStr == str);
+    }
+
+    @Test
+    public void getSetPick(){
+        String[] str = new String[]{"TestName"};
+        LockAttribute lockAttribute = new LockAttribute();
+        lockAttribute.setPickTypes(str);
+        String[] returnStr = lockAttribute.getPickTypes();
+        assert(returnStr == str);
     }
 
 }

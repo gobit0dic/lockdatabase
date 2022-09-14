@@ -22,7 +22,7 @@ public class LockAttributeRespository implements LockAttributeServiceInterface {
                     file, LockAttribute.class
             );
         }catch (Exception e){
-            System.out.println("Can't read config");
+            System.out.println("Can't read config: " + e);
         }
     }
 

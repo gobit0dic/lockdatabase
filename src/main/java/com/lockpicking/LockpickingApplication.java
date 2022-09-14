@@ -1,4 +1,4 @@
-package com.lockpicking.lockpicking;
+package com.lockpicking;
 
 
 import org.springframework.boot.SpringApplication;

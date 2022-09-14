@@ -9,12 +9,12 @@ import org.springframework.boot.test.context.SpringBootTest;
 public class LockAttributeRepositoryTests {
 
     @Test
-    public void getInstance(){
+    public void getLockAttributes(){
         LockAttributeRespository lockAttributeRespository = new LockAttributeRespository();
         LockAttribute lockAttribute = lockAttributeRespository.getLockAttributes();
-        assert(lockAttribute.picks.length != 0);
-        assert(lockAttribute.wrenches.length != 0);
-        assert(lockAttribute.locks.length != 0);
-        assert(lockAttribute.pins.length != 0);
+        assert(lockAttribute.getPickTypes().length != 0);
+        assert(lockAttribute.getWrenchTypes().length != 0);
+        assert(lockAttribute.getLockTypes().length != 0);
+        assert(lockAttribute.getPinTypes().length != 0);
     }
 }
