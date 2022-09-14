@@ -1,14 +1,12 @@
 package com.lockpicking.lockAttribute;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.lockpicking.lockAttribute.LockAttribute;
-import com.lockpicking.lockAttribute.LockAttributeServiceInterface;
 
 import java.io.File;
 
-public class LockAttributeRespository implements LockAttributeServiceInterface {
-    public static LockAttribute lockAttribute;
-    public static final String path = System.getProperty("user.dir") + "/ressources/config.json";
+class LockAttributeRespository implements LockAttributeServiceInterface {
+    private static LockAttribute lockAttribute;
+    private static final String path = System.getProperty("user.dir") + "/ressources/config.json";
 
     public LockAttributeRespository(){
         this.readConfigFile();
