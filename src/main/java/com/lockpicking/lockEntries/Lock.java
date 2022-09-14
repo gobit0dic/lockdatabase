@@ -1,9 +1,11 @@
-package com.example.lockpicking;
+package com.lockpicking.lockEntries;
+
+import com.lockpicking.lockpicking.DTO;
 
 import java.util.Map;
 import java.time.LocalDateTime;
 
-public class Lock implements DTO{
+public class Lock implements DTO {
 
     private String Id;
     private String NAME;

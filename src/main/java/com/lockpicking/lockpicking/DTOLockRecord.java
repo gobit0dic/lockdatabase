@@ -1,4 +1,6 @@
-package com.example.lockpicking;
+package com.lockpicking.lockpicking;
+
+import com.lockpicking.lockEntries.Lock;
 
 public class DTOLockRecord implements DTO{
 

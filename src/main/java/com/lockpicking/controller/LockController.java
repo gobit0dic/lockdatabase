@@ -1,12 +1,15 @@
-package com.example.lockpicking;
+package com.lockpicking.controller;
+import com.lockpicking.lockAttribute.LockAttribute;
+import com.lockpicking.lockAttribute.LockAttributeService;
+import com.lockpicking.lockAttribute.LockAttributeServiceImpl;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class LockController {
 
     @GetMapping("/lockattributes")
-    public PossibleLockAttributes getLockAttributes() {
-        PossibleLockAttributes lockAttributes = PossibleLockAttributes.getInstance();
+    public LockAttribute getLockAttributes() {
+        LockAttribute lockAttributes = LockAttributeServiceImpl.getLockAttributes();
         return lockAttributes;
     }
 

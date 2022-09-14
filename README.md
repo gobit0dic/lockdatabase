@@ -17,9 +17,9 @@ The business logic should just use DTO to perform action.
 With this approach, I can change the API layer or data layer in future without having to change the business logic.
 
 ### Known flats of the data structure
-- I decided to use local json files instead of e.g. a h2 database. I do this to train e.g. I/O of files, as well as parsing.
-- Because of not using h2, I have to generate the links in the payload by myself
-- I could read the json, load it into h2 database and then use this in further logic
+- I decided to use flat files (json) instead of e.g. a h2 database
+- That's not a scalable approach but the business rules should be agnostic to database or GUI
+- Because of not using h2, I have to generate the hypertext by myself
 
 ### User Story 
 The idea is to build a simple app to create and read records which represents locks. 
@@ -30,6 +30,7 @@ In addition, you want to retrieve the locks and get some saved attributes like n
 
 ### Todo
 - Software Architecture Diagram to ReadMe
+- Create multiple modules
 - Read from file to memory
 - Calculate next Item ID
 - Unit Test for LockpickingApplication

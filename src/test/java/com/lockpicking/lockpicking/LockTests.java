@@ -1,5 +1,6 @@
-package com.example.lockpicking;
+package com.lockpicking.lockpicking;
 
+import com.lockpicking.lockEntries.Lock;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -10,7 +11,7 @@ import java.util.Map;
 @SpringBootTest
 public class LockTests {
 
-    public Lock Lock = new Lock();
+    public com.lockpicking.lockEntries.Lock Lock = new Lock();
 
     @Test
     public void getSetName(){

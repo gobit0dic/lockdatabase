@@ -1,5 +1,7 @@
-package com.example.lockpicking;
+package com.lockpicking.lockpicking;
 
+import com.lockpicking.controller.LockController;
+import com.lockpicking.lockAttribute.LockAttributeService;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -10,7 +12,7 @@ public class LockControllerTests {
 
     @Test
     public void getLockAttributes(){
-      PossibleLockAttributes dto = this.controller.getLockAttributes();
+      LockAttributeService dto = this.controller.getLockAttributes();
       assert(dto.PICKTYPES.length != 0);
     }
 }

@@ -1,12 +1,7 @@
-package com.example.lockpicking;
-
-import org.springframework.boot.configurationprocessor.json.JSONStringer;
+package com.lockpicking.lockpicking;
 
 import java.io.File;
-import java.io.IOException;
 import java.nio.file.Files;
-import java.io.BufferedWriter;
-import java.io.FileWriter;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 

@@ -1,4 +1,4 @@
-package com.example.lockpicking;
+package com.lockpicking.lockpicking;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
