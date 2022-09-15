@@ -37,7 +37,6 @@ In addition, you want to retrieve the locks and get some saved attributes like n
 - Endpoint for writing to Database
 - Endpoint for reading single item
 - Endpoint for reading all items
-- Using h2 database
 
 ### Ideas for future development
 - Multi-tenancy feature with login

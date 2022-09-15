@@ -13,6 +13,7 @@ public class Lock {
     private String PICK;
     private Map<Integer, String> PINMAPPING;
     private String TYPE;
+    private String USERID;
 
     public Lock(){
     }
@@ -48,6 +49,10 @@ public class Lock {
         return this.TYPE;
     }
 
+    public String UserId(){
+        return this.USERID;
+    }
+
     public void setId(String id){
         this.Id = id;
     }
@@ -78,6 +83,10 @@ public class Lock {
 
     public void setPinMap(Map<Integer, String> pinMap){
         this.PINMAPPING = pinMap;
+    }
+
+    public void setUserId(String userId){
+        this.USERID = userId;
     }
 
 }

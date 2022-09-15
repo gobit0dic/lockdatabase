@@ -1,6 +1,6 @@
 package com.lockpicking.lockpicking;
 
-import com.lockpicking.lockEntries.FacadeLockRecord;
+import com.lockpicking.lockEntries.FacadeLockRepository;
 import com.lockpicking.lockEntries.Lock;
 import com.lockpicking.lockEntries.LockRecordHandler;
 import org.junit.jupiter.api.Test;
@@ -11,11 +11,11 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 
 @SpringBootTest
-public class FacadeLockRecordTests {
+public class FacadeLockRepositoryTests {
 
     @Test
     public void createRecordPositive(){
-        FacadeLockRecord facadeLockRecord = new FacadeLockRecord();
+        FacadeLockRepository facadeLockRepository = new FacadeLockRepository();
         DTOLockRecord lockRecord = new DTOLockRecord();
         Lock Lock = new Lock();
         Lock.setId("1");
@@ -30,7 +30,7 @@ public class FacadeLockRecordTests {
 
         String fileName = "Test.json";
 
-        facadeLockRecord.createRecord(lockRecord, fileName);
+        facadeLockRepository.createRecord(lockRecord, fileName);
 
         LockRecordHandler lockRecordHandler = new LockRecordHandler();
         lockRecordHandler.setFilename(fileName);
@@ -59,12 +59,12 @@ public class FacadeLockRecordTests {
 
     @Test
     public void createRecordEmptyRecord(){
-        FacadeLockRecord facadeLockRecord = new FacadeLockRecord();
+        FacadeLockRepository facadeLockRepository = new FacadeLockRepository();
         DTOLockRecord lockRecord = new DTOLockRecord();
 
         String fileName = "Test.json";
 
-        facadeLockRecord.createRecord(lockRecord, fileName);
+        facadeLockRepository.createRecord(lockRecord, fileName);
 
         LockRecordHandler lockRecordHandler = new LockRecordHandler();
         lockRecordHandler.setFilename(fileName);
