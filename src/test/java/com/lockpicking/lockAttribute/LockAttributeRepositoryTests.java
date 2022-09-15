@@ -1,7 +1,6 @@
 package com.lockpicking.lockAttribute;
 
-import com.lockpicking.lockAttribute.LockAttribute;
-import com.lockpicking.lockAttribute.LockAttributeRespository;
+import com.lockpicking.persistence.LockAttributeRespository;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 

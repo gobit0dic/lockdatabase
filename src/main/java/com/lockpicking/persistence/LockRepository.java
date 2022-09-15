@@ -1,7 +1,9 @@
-package com.lockpicking.lockEntries;
+package com.lockpicking.persistence;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.lockpicking.lockEntries.Lock;
+import com.lockpicking.lockEntries.LockServiceInterface;
 
 import java.io.File;
 import java.nio.file.Files;

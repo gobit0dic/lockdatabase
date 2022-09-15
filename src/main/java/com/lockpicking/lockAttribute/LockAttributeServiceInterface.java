@@ -1,6 +1,6 @@
 package com.lockpicking.lockAttribute;
 
-interface LockAttributeServiceInterface {
+public interface LockAttributeServiceInterface {
 
     LockAttribute getLockAttributes();
 }

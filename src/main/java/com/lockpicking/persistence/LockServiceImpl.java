@@ -1,4 +1,7 @@
-package com.lockpicking.lockEntries;
+package com.lockpicking.persistence;
+
+import com.lockpicking.lockEntries.Lock;
+import com.lockpicking.lockEntries.LockService;
 
 public class LockServiceImpl{
 

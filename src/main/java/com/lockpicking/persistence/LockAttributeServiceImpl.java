@@ -1,4 +1,7 @@
-package com.lockpicking.lockAttribute;
+package com.lockpicking.persistence;
+
+import com.lockpicking.lockAttribute.LockAttribute;
+import com.lockpicking.lockAttribute.LockAttributeService;
 
 public class LockAttributeServiceImpl{
 

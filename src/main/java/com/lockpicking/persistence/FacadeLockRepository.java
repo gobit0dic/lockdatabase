@@ -1,8 +1,9 @@
-package com.lockpicking.lockEntries;
+package com.lockpicking.persistence;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.lockpicking.lockEntries.Lock;
+import com.lockpicking.lockEntries.LockServiceInterface;
 
-public class FacadeLockRepository implements LockServiceInterface{
+public class FacadeLockRepository implements LockServiceInterface {
 
     public boolean writeLock(Lock lockRecord){
         try{

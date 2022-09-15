@@ -1,6 +1,6 @@
 package com.lockpicking.controller;
 import com.lockpicking.lockAttribute.LockAttribute;
-import com.lockpicking.lockAttribute.LockAttributeServiceImpl;
+import com.lockpicking.persistence.LockAttributeServiceImpl;
 import org.springframework.web.bind.annotation.*;
 
 @RestController

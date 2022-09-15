@@ -1,5 +1,6 @@
 package com.lockpicking.lockAttribute;
 
+import com.lockpicking.persistence.LockAttributeServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 

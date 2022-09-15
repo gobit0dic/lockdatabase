@@ -1,7 +1,7 @@
 package com.lockpicking.lockpicking;
 
 import com.lockpicking.lockEntries.Lock;
-import com.lockpicking.lockEntries.LockServiceImpl;
+import com.lockpicking.persistence.LockServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -22,7 +22,7 @@ public class FacadeLockRepositoryTests {
         boolean wasSuccess = LockServiceImpl.writeLock(lock);
         assert(wasSuccess);
 
-        String path = path = System.getProperty("user.dir") + "/mockDatabase/locks/1.json";
+        String path = System.getProperty("user.dir") + "/mockDatabase/locks/1.json";
 
         File file = new File(path);
         assert(file.exists());
@@ -47,7 +47,7 @@ public class FacadeLockRepositoryTests {
         boolean wasSuccess = LockServiceImpl.writeLock(lock);
         assert(!wasSuccess);
 
-        String path = path = System.getProperty("user.dir") + "/mockDatabase/locks/null.json";
+        String path = System.getProperty("user.dir") + "/mockDatabase/locks/null.json";
 
         File file = new File(path);
         assert(!file.exists());
