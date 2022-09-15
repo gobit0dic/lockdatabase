@@ -2,15 +2,16 @@ package elkloso.lockpicking.persistence;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import elkloso.lockpicking.lockAttribute.LockAttribute;
 import elkloso.lockpicking.lockEntries.Lock;
-import elkloso.lockpicking.lockEntries.LockServiceInterface;
+import elkloso.lockpicking.lockEntries.LockService;
 
 import java.io.File;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 
-public class LockRepository implements LockServiceInterface {
+public class LockRepository implements LockService {
     private static final String path = System.getProperty("user.dir") + "/mockDatabase/locks/";
     private String filename;
     private String finalPath;
@@ -28,8 +29,16 @@ public class LockRepository implements LockServiceInterface {
     }
 
     public Lock[] getAllLocks(){
+        ObjectMapper objectMapper = new ObjectMapper();
         Lock[] locks = new Lock[]{};
-        //TODO
+        File file = new File(finalPath);
+        try{
+            locks = objectMapper.readValue(
+                    file, Lock[].class
+            );
+        }catch (Exception e){
+            System.out.println("Can't read lock file: " + e);
+        }
         return locks;
     };
 

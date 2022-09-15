@@ -1,9 +1,9 @@
 package elkloso.lockpicking.persistence;
 
 import elkloso.lockpicking.lockEntries.Lock;
-import elkloso.lockpicking.lockEntries.LockServiceInterface;
+import elkloso.lockpicking.lockEntries.LockService;
 
-public class FacadeLockRepository implements LockServiceInterface {
+public class FacadeLockRepository implements LockService {
 
     public boolean writeLock(Lock lockRecord){
         try{
