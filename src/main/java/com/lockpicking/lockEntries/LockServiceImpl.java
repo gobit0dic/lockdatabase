@@ -1,10 +1,10 @@
 package com.lockpicking.lockEntries;
 
-public class LockServiceImpl implements LockServiceInterface{
+public class LockServiceImpl{
 
-    @Override
-    public boolean writeLock(Lock lock) {
-        boolean returnValue = FacadeLockRepository.createRecord(lock);
+    public static boolean writeLock(Lock lock) {
+        LockService lockService = new LockService(new FacadeLockRepository());
+        boolean returnValue = lockService.writeLock(lock);
         return returnValue;
     }
 }

@@ -37,6 +37,7 @@ In addition, you want to retrieve the locks and get some saved attributes like n
 - Endpoint for writing to Database
 - Endpoint for reading single item
 - Endpoint for reading all items
+- Mock Interface for testing
 
 ### Ideas for future development
 - Multi-tenancy feature with login

@@ -9,22 +9,25 @@ import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 
 public class LockRepository implements LockServiceInterface {
-    public static final String path = System.getProperty("user.dir") + "/mockDatabase/locks/";
-    public String filename;
-    public String finalPath;
-    public ObjectMapper objectMapper = new ObjectMapper();
+    private static final String path = System.getProperty("user.dir") + "/mockDatabase/locks/";
+    private String filename;
+    private String finalPath;
+    private ObjectMapper objectMapper = new ObjectMapper();
+    private String userId;
+    private static final String FILETYPE = ".json";
 
-    public void setFilename(String filename){
-        this.filename = filename;
-        this.finalPath = path + filename;
+    public void setUserId(Lock lock){
+        this.userId = lock.getUserId();
     }
 
-    public String getFinalPath(){
-        return this.finalPath;
+    public void setFilename(){
+        this.filename = this.userId + FILETYPE;
+        this.finalPath = path + filename;
     }
 
     public Lock[] getAllLocks(){
         Lock[] locks = new Lock[]{};
+        //TODO
         return locks;
     };
 
@@ -62,6 +65,7 @@ public class LockRepository implements LockServiceInterface {
     };
 
     public boolean deleteLock(Lock lock){
+        //TODO
         return false;
     };
 

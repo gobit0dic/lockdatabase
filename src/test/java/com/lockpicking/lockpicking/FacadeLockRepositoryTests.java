@@ -1,8 +1,7 @@
 package com.lockpicking.lockpicking;
 
-import com.lockpicking.lockEntries.FacadeLockRepository;
 import com.lockpicking.lockEntries.Lock;
-import com.lockpicking.lockEntries.LockRecordHandler;
+import com.lockpicking.lockEntries.LockServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -15,26 +14,15 @@ public class FacadeLockRepositoryTests {
 
     @Test
     public void createRecordPositive(){
-        FacadeLockRepository facadeLockRepository = new FacadeLockRepository();
-        DTOLockRecord lockRecord = new DTOLockRecord();
-        Lock Lock = new Lock();
-        Lock.setId("1");
-        Lock.setName("Test");
+        Lock lock = new Lock();
+        lock.setId("1");
+        lock.setName("Test");
+        lock.setUserId("1");
 
-        Links links = new Links();
-        links.selfhref = "TestURL";
-        links.lockhref = "TesterURL";
+        boolean wasSuccess = LockServiceImpl.writeLock(lock);
+        assert(wasSuccess);
 
-        lockRecord.DTOLock = Lock;
-        lockRecord._links = links;
-
-        String fileName = "Test.json";
-
-        facadeLockRepository.createRecord(lockRecord, fileName);
-
-        LockRecordHandler lockRecordHandler = new LockRecordHandler();
-        lockRecordHandler.setFilename(fileName);
-        String path = lockRecordHandler.getFinalPath();
+        String path = path = System.getProperty("user.dir") + "/mockDatabase/locks/1.json";
 
         File file = new File(path);
         assert(file.exists());
@@ -44,12 +32,8 @@ public class FacadeLockRepositoryTests {
             System.out.println(data);
             String toCheckName = "\"name\":\"Test\"";
             String toCheckId = "\"id\":\"1\"";
-            String toCheckSelfHref = "\"selfhref\":\"TestURL\"";
-            String toCheckLockHref = "\"lockhref\":\"TesterURL\"";
             assert(data.contains(toCheckName));
             assert(data.contains(toCheckId));
-            assert(data.contains(toCheckSelfHref));
-            assert(data.contains(toCheckLockHref));
         }catch (Exception e){
             assert false;
         }
@@ -59,16 +43,11 @@ public class FacadeLockRepositoryTests {
 
     @Test
     public void createRecordEmptyRecord(){
-        FacadeLockRepository facadeLockRepository = new FacadeLockRepository();
-        DTOLockRecord lockRecord = new DTOLockRecord();
+        Lock lock = new Lock();
+        boolean wasSuccess = LockServiceImpl.writeLock(lock);
+        assert(!wasSuccess);
 
-        String fileName = "Test.json";
-
-        facadeLockRepository.createRecord(lockRecord, fileName);
-
-        LockRecordHandler lockRecordHandler = new LockRecordHandler();
-        lockRecordHandler.setFilename(fileName);
-        String path = lockRecordHandler.getFinalPath();
+        String path = path = System.getProperty("user.dir") + "/mockDatabase/locks/null.json";
 
         File file = new File(path);
         assert(!file.exists());

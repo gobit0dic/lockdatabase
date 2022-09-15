@@ -49,7 +49,7 @@ public class Lock {
         return this.TYPE;
     }
 
-    public String UserId(){
+    public String getUserId(){
         return this.USERID;
     }
 

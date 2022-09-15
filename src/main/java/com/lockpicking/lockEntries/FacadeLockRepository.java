@@ -2,12 +2,13 @@ package com.lockpicking.lockEntries;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-public class FacadeLockRepository {
+public class FacadeLockRepository implements LockServiceInterface{
 
-    public static boolean createRecord(Lock lockRecord){
+    public boolean writeLock(Lock lockRecord){
         try{
             LockRepository lockRepository = new LockRepository();
-            lockRepository.setFilename(fileName);
+            lockRepository.setUserId(lockRecord);
+            lockRepository.setFilename();
             lockRepository.createFileIfNotExists();
             lockRepository.writeLock(lockRecord);
             return true;
