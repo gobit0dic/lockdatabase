@@ -38,4 +38,8 @@ public class LockServiceImpl implements LockService {
         return wasSuccess;
     };
 
+    public Lock[] getAllLocks(){
+        return serviceInterface.getAllLocks();
+    }
+
 }

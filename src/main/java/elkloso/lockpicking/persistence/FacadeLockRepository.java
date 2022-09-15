@@ -17,4 +17,17 @@ public class FacadeLockRepository implements LockService {
             return false;
         }
     }
+
+    @Override
+    public Lock[] getAllLocks() {
+        try{
+            LockRepository lockRepository = new LockRepository();
+            lockRepository.setUserId(lockRecord);
+            lockRepository.setFilename();
+            lockRepository.createFileIfNotExists();
+            return lockRepository.getAllLocks();
+        }catch (Exception e){
+            return null;
+        }
+    }
 }
