@@ -56,9 +56,9 @@ public class LockTests {
     @Test
     public void getSetDateTime(){
         LocalDateTime dateTimeSet = LocalDateTime.now();
-        this.Lock.setDateTime(dateTimeSet);
-        LocalDateTime dateTime = this.Lock.getDateTime();
-        assert(dateTime == dateTimeSet);
+        this.Lock.setDateTime(String.valueOf(dateTimeSet));
+        String dateTime = this.Lock.getDateTime();
+        assert(String.valueOf(dateTime).contains(String.valueOf(dateTimeSet)));
     }
 
     @Test

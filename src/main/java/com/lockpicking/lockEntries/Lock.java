@@ -7,7 +7,7 @@ public class Lock {
 
     private String Id;
     private String NAME;
-    private LocalDateTime DATETIME;
+    private String DATETIME;
     private Integer NUMPINS;
     private String WRENCH;
     private String PICK;
@@ -25,7 +25,7 @@ public class Lock {
         return this.NAME;
     }
 
-    public LocalDateTime getDateTime(){
+    public String getDateTime(){
         return this.DATETIME;
     }
 
@@ -77,7 +77,7 @@ public class Lock {
         this.NUMPINS = numPins;
     }
 
-    public void setDateTime(LocalDateTime DateTime){
+    public void setDateTime(String DateTime){
         this.DATETIME = DateTime;
     }
 
