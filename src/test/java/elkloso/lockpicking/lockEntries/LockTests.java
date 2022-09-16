@@ -17,7 +17,7 @@ public class LockTests {
         String nameSet = "TestName";
         this.Lock.setName(nameSet);
         String name = this.Lock.getName();
-        assert(name == nameSet);
+        assert(name.equals(nameSet));
     }
 
     @Test
@@ -25,7 +25,7 @@ public class LockTests {
         Integer numSet = 10;
         this.Lock.setNumPins(numSet);
         Integer numGet = this.Lock.getNumPins();
-        assert(numSet == numGet);
+        assert(numSet.equals(numGet));
     }
 
     @Test
@@ -33,7 +33,7 @@ public class LockTests {
         String nameSet = "TestWrench";
         this.Lock.setWrench(nameSet);
         String name = this.Lock.getWrench();
-        assert(name == nameSet);
+        assert(name.equals(nameSet));
     }
 
     @Test
@@ -41,7 +41,7 @@ public class LockTests {
         String nameSet = "TestPick";
         this.Lock.setPick(nameSet);
         String name = this.Lock.getPick();
-        assert(name == nameSet);
+        assert(name.equals(nameSet));
     }
 
     @Test
@@ -49,7 +49,7 @@ public class LockTests {
         String nameSet = "TestType";
         this.Lock.setType(nameSet);
         String name = this.Lock.getType();
-        assert(name == nameSet);
+        assert(name.equals(nameSet));
     }
 
     @Test
@@ -62,7 +62,7 @@ public class LockTests {
 
     @Test
     public void getSetPinMap(){
-        Map<Integer, String> pinMapSet = new HashMap<Integer, String>();
+        Map<Integer, String> pinMapSet = new HashMap<>();
         pinMapSet.put(1, "Test");
         this.Lock.setPinMap(pinMapSet);
         Map<Integer, String> pinMapGet = this.Lock.getPinMapping();
@@ -74,7 +74,7 @@ public class LockTests {
         String setId = "1";
         this.Lock.setId(setId);
         String idGet = this.Lock.getId();
-        assert(idGet == setId);
+        assert(idGet.equals(setId));
     }
 
     @Test
@@ -82,7 +82,7 @@ public class LockTests {
         String setId = "1";
         this.Lock.setUserId(setId);
         String idGet = this.Lock.getUserId();
-        assert(idGet == setId);
+        assert(idGet.equals(setId));
     }
 
 }
