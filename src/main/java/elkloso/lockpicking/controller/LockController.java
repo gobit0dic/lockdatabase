@@ -25,8 +25,8 @@ public class LockController {
     }
 
     @PostMapping("/lock")
-    public boolean writeLock() {
-        //TODO
+    public boolean writeLock(@RequestBody Lock lock) {
+        lockFactory.writeLock(lock);
         return true;
     }
 }
