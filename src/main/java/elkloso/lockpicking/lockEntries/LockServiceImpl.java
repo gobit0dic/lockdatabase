@@ -38,6 +38,10 @@ public class LockServiceImpl implements LockService {
         return wasSuccess;
     };
 
+    public boolean deleteLock(Lock lockRecord){
+        return serviceInterface.deleteLock(lockRecord);
+    };
+
     public Lock[] getAllLocks(){
         return serviceInterface.getAllLocks();
     }

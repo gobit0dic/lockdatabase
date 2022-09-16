@@ -11,7 +11,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 
-public class LockRepository implements LockService {
+public class LockRepository {
     private static final String path = System.getProperty("user.dir") + "/mockDatabase/locks/";
     private String filename;
     private String finalPath;
@@ -84,6 +84,29 @@ public class LockRepository implements LockService {
             return false;
         }
     };
+
+    public boolean writeLocks(Lock[] locks){
+        String jsonString = null;
+        try {
+            jsonString = objectMapper.writeValueAsString(locks);
+        } catch (JsonProcessingException e) {
+            System.out.println(e);
+            return false;
+        }
+
+        String fileContent = jsonString + System.lineSeparator();
+        try {
+            Files.write(
+                    Paths.get(this.finalPath),
+                    fileContent.getBytes(),
+                    StandardOpenOption.WRITE
+            );
+            return true;
+        }catch (Exception e){
+            System.out.println(e);
+            return false;
+        }
+    }
 
     public Lock[] deleteLockFromArray(Lock lock){
         Lock[] allLocks = getAllLocks();

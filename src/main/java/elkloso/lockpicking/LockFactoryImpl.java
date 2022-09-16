@@ -13,6 +13,12 @@ public class LockFactoryImpl extends LockFactory {
         return returnValue;
     }
 
+    public boolean deleteLock(Lock lock) {
+        LockServiceImpl lockServiceImpl = new LockServiceImpl(new FacadeLockRepository());
+        boolean returnValue = lockServiceImpl.deleteLock(lock);
+        return returnValue;
+    }
+
     public Lock[] getAllLocks() {
         LockServiceImpl lockServiceImpl = new LockServiceImpl(new FacadeLockRepository());
         Lock[] locks = lockServiceImpl.getAllLocks();

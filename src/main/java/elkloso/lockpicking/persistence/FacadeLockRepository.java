@@ -42,4 +42,16 @@ public class FacadeLockRepository implements LockService {
             return null;
         }
     }
+
+    public boolean deleteLock(Lock lock){
+        try{
+            LockRepository lockRepository = new LockRepository();
+            lockRepository.setUserId(userId);
+            lockRepository.setFilename();
+            Lock[] locks = lockRepository.deleteLockFromArray(lock);
+            return lockRepository.writeLocks(locks);
+        }catch (Exception e){
+            return false;
+        }
+    }
 }
