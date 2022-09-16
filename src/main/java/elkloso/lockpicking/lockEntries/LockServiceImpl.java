@@ -42,4 +42,8 @@ public class LockServiceImpl implements LockService {
         return serviceInterface.getAllLocks();
     }
 
+    public Lock getSingleLock(String lockId){
+        return serviceInterface.getSingleLock(lockId);
+    }
+
 }

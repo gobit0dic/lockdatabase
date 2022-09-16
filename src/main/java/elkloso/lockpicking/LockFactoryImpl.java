@@ -18,4 +18,10 @@ public class LockFactoryImpl extends LockFactory {
         Lock[] locks = lockServiceImpl.getAllLocks();
         return locks;
     }
+
+    public Lock getSingleLock(String lockId){
+        LockServiceImpl lockServiceImpl = new LockServiceImpl(new FacadeLockRepository());
+        Lock lock = lockServiceImpl.getSingleLock(lockId);
+        return lock;
+    }
 }

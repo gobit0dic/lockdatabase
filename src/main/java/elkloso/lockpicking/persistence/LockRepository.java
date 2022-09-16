@@ -42,6 +42,16 @@ public class LockRepository implements LockService {
         return locks;
     };
 
+    public Lock getSingleLock(String lockId){
+        Lock[] allLocks = getAllLocks();
+        for(Lock lock : allLocks){
+            if(lock.getId() == lockId){
+                return lock;
+            }
+        }
+        return null;
+    }
+
     public void createFileIfNotExists(){
         File file = new File(this.finalPath);
         if(!file.exists() && !file.isDirectory()) {

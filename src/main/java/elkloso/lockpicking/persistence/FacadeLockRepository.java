@@ -26,8 +26,18 @@ public class FacadeLockRepository implements LockService {
             LockRepository lockRepository = new LockRepository();
             lockRepository.setUserId(userId);
             lockRepository.setFilename();
-            lockRepository.createFileIfNotExists();
             return lockRepository.getAllLocks();
+        }catch (Exception e){
+            return null;
+        }
+    }
+
+    public Lock getSingleLock(String lockId){
+        try{
+            LockRepository lockRepository = new LockRepository();
+            lockRepository.setUserId(userId);
+            lockRepository.setFilename();
+            return lockRepository.getSingleLock(lockId);
         }catch (Exception e){
             return null;
         }

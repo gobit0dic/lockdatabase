@@ -24,6 +24,13 @@ public class LockController {
         return locks;
     }
 
+    @GetMapping("/lock/{lockId}")
+    public Lock getSingleLock(@PathVariable String lockId) {
+        Lock lock = lockFactory.getSingleLock(lockId);
+        return lock;
+    }
+
+    //TODO Return Value
     @PostMapping("/lock")
     public boolean writeLock(@RequestBody Lock lock) {
         lockFactory.writeLock(lock);
