@@ -8,6 +8,7 @@ class LockpickingApplicationTests {
 
     @Test
     void contextLoads() {
+        LockpickingApplication.main(new String[]{});
     }
 
 }
