@@ -1,6 +1,5 @@
 package elkloso.lockpicking.lockEntries;
 
-import elkloso.lockpicking.persistence.FacadeLockRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -27,8 +26,8 @@ public class LockServiceImplTests {
         when(serviceInterface.getAllLocks())
                 .thenReturn(locks);
         LockServiceImpl lockService = new LockServiceImpl(serviceInterface);
-        lockService.getAllLocks();
-        assert(locks.length == 1);
+        Lock[] locksReturn = lockService.getAllLocks();
+        assert(locksReturn.length == 1);
     }
 
     @Test
