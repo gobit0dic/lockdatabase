@@ -10,17 +10,13 @@ public class LockServiceImpl implements LockService {
     private final LockService serviceInterface;
 
     private boolean checkForFilledRecord(Lock lock){
-        if(lock.getUserId() == null || lock.getName() == null){
-            return false;
-        }
-        return true;
+        return lock.getUserId() != null && lock.getName() != null;
     }
 
     private String calculateLockId(Lock lock){
         Timestamp ts = new Timestamp(System.currentTimeMillis());
-        String inputString = lock.getName() + String.valueOf(ts);
-        String lockId = DigestUtils.md5DigestAsHex(inputString.getBytes());
-        return lockId;
+        String inputString = lock.getName() + ts;
+        return DigestUtils.md5DigestAsHex(inputString.getBytes());
     }
 
     public LockServiceImpl(LockService serviceInterface) {
@@ -36,11 +32,11 @@ public class LockServiceImpl implements LockService {
             wasSuccess = serviceInterface.writeLock(lockRecord);
         }
         return wasSuccess;
-    };
+    }
 
     public boolean deleteLock(Lock lockRecord){
         return serviceInterface.deleteLock(lockRecord);
-    };
+    }
 
     public Lock[] getAllLocks(){
         return serviceInterface.getAllLocks();
