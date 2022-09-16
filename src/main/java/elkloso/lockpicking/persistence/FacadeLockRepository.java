@@ -13,8 +13,7 @@ public class FacadeLockRepository implements LockService {
             lockRepository.setUserId(lockRecord.getUserId());
             lockRepository.setFilename();
             lockRepository.createFileIfNotExists();
-            lockRepository.writeLock(lockRecord);
-            return true;
+            return lockRepository.writeLock(lockRecord);
         }catch (Exception e){
             return false;
         }
