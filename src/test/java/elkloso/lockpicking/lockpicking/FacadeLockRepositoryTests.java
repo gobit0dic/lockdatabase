@@ -1,7 +1,7 @@
 package elkloso.lockpicking.lockpicking;
 
 import elkloso.lockpicking.lockEntries.Lock;
-import elkloso.lockpicking.persistence.LockFactoryImpl;
+import elkloso.lockpicking.LockFactoryImpl;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -18,7 +18,8 @@ public class FacadeLockRepositoryTests {
         lock.setName("Test");
         lock.setUserId("1");
 
-        boolean wasSuccess = LockFactoryImpl.writeLock(lock);
+        LockFactoryImpl lockFactory = new LockFactoryImpl();
+        boolean wasSuccess = lockFactory.writeLock(lock);
         assert(wasSuccess);
 
         String path = System.getProperty("user.dir") + "/mockDatabase/locks/1.json";
@@ -43,7 +44,8 @@ public class FacadeLockRepositoryTests {
     @Test
     public void createRecordEmptyRecord(){
         Lock lock = new Lock();
-        boolean wasSuccess = LockFactoryImpl.writeLock(lock);
+        LockFactoryImpl lockFactory = new LockFactoryImpl();
+        boolean wasSuccess = lockFactory.writeLock(lock);
         assert(!wasSuccess);
 
         String path = System.getProperty("user.dir") + "/mockDatabase/locks/null.json";

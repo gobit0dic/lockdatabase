@@ -19,8 +19,8 @@ public class LockRepository implements LockService {
     private String userId;
     private static final String FILETYPE = ".json";
 
-    public void setUserId(Lock lock){
-        this.userId = lock.getUserId();
+    public void setUserId(String userId){
+        this.userId = userId;
     }
 
     public void setFilename(){

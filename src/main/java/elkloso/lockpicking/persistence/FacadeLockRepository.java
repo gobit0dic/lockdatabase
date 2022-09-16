@@ -5,10 +5,12 @@ import elkloso.lockpicking.lockEntries.LockService;
 
 public class FacadeLockRepository implements LockService {
 
+    private static final String userId = "1"; //TODO UserHandling later
+
     public boolean writeLock(Lock lockRecord){
         try{
             LockRepository lockRepository = new LockRepository();
-            lockRepository.setUserId(lockRecord);
+            lockRepository.setUserId(lockRecord.getUserId());
             lockRepository.setFilename();
             lockRepository.createFileIfNotExists();
             lockRepository.writeLock(lockRecord);
@@ -22,7 +24,7 @@ public class FacadeLockRepository implements LockService {
     public Lock[] getAllLocks() {
         try{
             LockRepository lockRepository = new LockRepository();
-            lockRepository.setUserId(lockRecord);
+            lockRepository.setUserId(userId);
             lockRepository.setFilename();
             lockRepository.createFileIfNotExists();
             return lockRepository.getAllLocks();

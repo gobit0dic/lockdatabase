@@ -9,6 +9,10 @@ public class UsersLockEntriesService {
     UsersLockEntriesService(){
     }
 
+    private void setLocksToCache(Lock[] locks){
+        usersLockEntries.setAllLocks(locks);
+    }
+
     public UsersLockEntriesService getInstance(){
         if(instance == null){
             instance = new UsersLockEntriesService();

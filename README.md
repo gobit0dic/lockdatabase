@@ -30,13 +30,10 @@ In addition, you want to retrieve the locks and get some saved attributes like n
 
 ### Todo
 - Software Architecture Diagram to ReadMe
-- Create multiple modules
 - Read from file to memory
-- Calculate next Item ID
-- Unit Test for LockpickingApplication
+- Unit Tests
 - Endpoint for writing to Database
 - Endpoint for reading single item
-- Endpoint for reading all items
 - Mock Interface for testing
 
 ### Ideas for future development

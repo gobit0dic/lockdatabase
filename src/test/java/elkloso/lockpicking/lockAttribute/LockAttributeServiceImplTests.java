@@ -1,6 +1,6 @@
 package elkloso.lockpicking.lockAttribute;
 
-import elkloso.lockpicking.persistence.LockAttributeFactoryImpl;
+import elkloso.lockpicking.LockAttributeFactoryImpl;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
