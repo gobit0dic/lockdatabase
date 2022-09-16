@@ -1,6 +1,7 @@
-package elkloso.lockpicking.lockEntries;
+package elkloso.lockpicking;
 
 import elkloso.lockpicking.LockFactoryImpl;
+import elkloso.lockpicking.lockEntries.Lock;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 

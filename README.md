@@ -27,11 +27,9 @@ As somebody doing lockpicking as a hobby, you will deal with a lot of locks whil
 The goal is to safe each lock you opened in a simple way. 
 In addition, you want to retrieve the locks and get some saved attributes like number of pins or type of lock. 
 
-
 ### Todo
 - Software Architecture Diagram to ReadMe
 - Unit Tests
-- Mock Interface for testing
 
 ### Ideas for future development
 - Multi-tenancy feature with login
