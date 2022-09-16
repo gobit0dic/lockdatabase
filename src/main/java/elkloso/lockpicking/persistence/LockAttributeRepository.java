@@ -6,11 +6,11 @@ import elkloso.lockpicking.lockAttribute.LockAttributeService;
 
 import java.io.File;
 
-public class LockAttributeRespository implements LockAttributeService {
+public class LockAttributeRepository implements LockAttributeService {
     private static LockAttribute lockAttribute;
     private static final String path = System.getProperty("user.dir") + "/ressources/config.json";
 
-    public LockAttributeRespository(){
+    public LockAttributeRepository(){
         this.readConfigFile();
     }
 

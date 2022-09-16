@@ -1,7 +1,8 @@
 package elkloso.lockpicking;
 
-import elkloso.lockpicking.LockFactoryImpl;
 import elkloso.lockpicking.lockEntries.Lock;
+import elkloso.lockpicking.lockEntries.LockService;
+import elkloso.lockpicking.lockEntries.LockServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -9,11 +10,14 @@ import java.io.File;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+
 @SpringBootTest
-public class FacadeLockRepositoryTests {
+public class LockFactoryImplTests {
 
     @Test
-    public void createRecordPositive(){
+    public void writeLockPositive(){
         Lock lock = new Lock();
         lock.setName("Test");
         lock.setUserId("1");
@@ -42,7 +46,7 @@ public class FacadeLockRepositoryTests {
     }
 
     @Test
-    public void createRecordEmptyRecord(){
+    public void writeLockEmptyRecord(){
         Lock lock = new Lock();
         LockFactoryImpl lockFactory = new LockFactoryImpl();
         boolean wasSuccess = lockFactory.writeLock(lock);
@@ -52,6 +56,30 @@ public class FacadeLockRepositoryTests {
 
         File file = new File(path);
         assert(!file.exists());
+    }
+
+    @Test
+    public void getAllLocksWithLock() {
+        LockFactoryImpl lockFactory = new LockFactoryImpl();
+        Lock[] locks = lockFactory.getAllLocks();
+        assert(locks != null);
+    }
+
+    @Test
+    public void getSingleLockNoLock() {
+        LockFactoryImpl lockFactory = new LockFactoryImpl();
+        Lock lock = lockFactory.getSingleLock("123");
+        assert(lock == null);
+    }
+
+    @Test
+    public void deleteLock() {
+        Lock lock = new Lock();
+        String id = "Test";
+        lock.setId(id);
+        LockFactoryImpl lockFactory = new LockFactoryImpl();
+        boolean response = lockFactory.deleteLock(lock);
+        assert(response);
     }
 
 }

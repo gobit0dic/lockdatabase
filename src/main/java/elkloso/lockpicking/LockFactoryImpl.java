@@ -9,25 +9,21 @@ public class LockFactoryImpl extends LockFactory {
 
     public boolean writeLock(Lock lock) {
         LockServiceImpl lockServiceImpl = new LockServiceImpl(new FacadeLockRepository());
-        boolean returnValue = lockServiceImpl.writeLock(lock);
-        return returnValue;
+        return lockServiceImpl.writeLock(lock);
     }
 
     public boolean deleteLock(Lock lock) {
         LockServiceImpl lockServiceImpl = new LockServiceImpl(new FacadeLockRepository());
-        boolean returnValue = lockServiceImpl.deleteLock(lock);
-        return returnValue;
+        return lockServiceImpl.deleteLock(lock);
     }
 
     public Lock[] getAllLocks() {
         LockServiceImpl lockServiceImpl = new LockServiceImpl(new FacadeLockRepository());
-        Lock[] locks = lockServiceImpl.getAllLocks();
-        return locks;
+        return lockServiceImpl.getAllLocks();
     }
 
     public Lock getSingleLock(String lockId){
         LockServiceImpl lockServiceImpl = new LockServiceImpl(new FacadeLockRepository());
-        Lock lock = lockServiceImpl.getSingleLock(lockId);
-        return lock;
+        return lockServiceImpl.getSingleLock(lockId);
     }
 }

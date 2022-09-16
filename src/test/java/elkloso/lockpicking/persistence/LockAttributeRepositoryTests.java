@@ -9,8 +9,8 @@ public class LockAttributeRepositoryTests {
 
     @Test
     public void getLockAttributes(){
-        LockAttributeRespository lockAttributeRespository = new LockAttributeRespository();
-        LockAttribute lockAttribute = lockAttributeRespository.getLockAttributes();
+        LockAttributeRepository lockAttributeRepository = new LockAttributeRepository();
+        LockAttribute lockAttribute = lockAttributeRepository.getLockAttributes();
         assert(lockAttribute.getPickTypes().length != 0);
         assert(lockAttribute.getWrenchTypes().length != 0);
         assert(lockAttribute.getLockTypes().length != 0);
