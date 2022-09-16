@@ -2,9 +2,9 @@ package elkloso.lockpicking.persistence;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import elkloso.lockpicking.lockAttribute.LockAttribute;
 import elkloso.lockpicking.lockEntries.Lock;
 import elkloso.lockpicking.lockEntries.LockService;
+import org.yaml.snakeyaml.util.ArrayUtils;
 
 import java.io.File;
 import java.nio.file.Files;
@@ -85,9 +85,16 @@ public class LockRepository implements LockService {
         }
     };
 
-    public boolean deleteLock(Lock lock){
-        //TODO
-        return false;
+    public Lock[] deleteLockFromArray(Lock lock){
+        Lock[] allLocks = getAllLocks();
+        Lock[] allLocksNew = new Lock[allLocks.length-1];
+        Integer index = 0;
+        for(Lock lockFromAll : allLocks){
+            if(lockFromAll.getId() != lock.getId()){
+                allLocksNew[index] = lockFromAll;
+            }
+        }
+        return allLocksNew;
     };
 
 }

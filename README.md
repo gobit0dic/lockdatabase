@@ -31,7 +31,6 @@ In addition, you want to retrieve the locks and get some saved attributes like n
 ### Todo
 - Software Architecture Diagram to ReadMe
 - Unit Tests
-- Endpoint for reading single item
 - Endpoint for delete single item
 - Mock Interface for testing
 
