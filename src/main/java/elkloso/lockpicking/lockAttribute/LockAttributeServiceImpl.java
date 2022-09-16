@@ -2,7 +2,6 @@ package elkloso.lockpicking.lockAttribute;
 
 public class LockAttributeServiceImpl implements LockAttributeService {
     private final LockAttributeService lockAttributeService;
-    private static LockAttribute lockAttribute;
 
     private static LockAttributeServiceImpl lockAttributeServiceImpl;
 
@@ -12,7 +11,7 @@ public class LockAttributeServiceImpl implements LockAttributeService {
 
     @Override
     public LockAttribute getLockAttributes(){
-        lockAttribute = lockAttributeService.getLockAttributes();
+        LockAttribute lockAttribute = lockAttributeService.getLockAttributes();
         return lockAttribute;
     }
 
