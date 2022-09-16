@@ -32,6 +32,9 @@ public class LockRepository {
         ObjectMapper objectMapper = new ObjectMapper();
         Lock[] locks = new Lock[]{};
         File file = new File(finalPath);
+        if(file == null){
+            return null;
+        }
         try{
             locks = objectMapper.readValue(
                     file, Lock[].class
@@ -90,7 +93,7 @@ public class LockRepository {
         try {
             jsonString = objectMapper.writeValueAsString(locks);
         } catch (JsonProcessingException e) {
-            System.out.println(e);
+            System.out.println("JsonProcessingException: " + e);
             return false;
         }
 
@@ -103,21 +106,24 @@ public class LockRepository {
             );
             return true;
         }catch (Exception e){
-            System.out.println(e);
+            System.out.println("File Write Exception: " + e);
             return false;
         }
     }
 
     public Lock[] deleteLockFromArray(Lock lock){
         Lock[] allLocks = getAllLocks();
-        Lock[] allLocksNew = new Lock[allLocks.length-1];
-        Integer index = 0;
-        for(Lock lockFromAll : allLocks){
-            if(lockFromAll.getId() != lock.getId()){
-                allLocksNew[index] = lockFromAll;
+        if(allLocks.length > 0){
+            Lock[] allLocksNew = new Lock[allLocks.length-1];
+            Integer index = 0;
+            for(Lock lockFromAll : allLocks){
+                if(lockFromAll.getId() != lock.getId()){
+                    allLocksNew[index] = lockFromAll;
+                }
             }
+            return allLocksNew;
         }
-        return allLocksNew;
+       return allLocks;
     };
 
 }
