@@ -1,6 +1,5 @@
-package elkloso.lockpicking.lockpicking;
+package elkloso.lockpicking.lockEntries;
 
-import elkloso.lockpicking.lockEntries.Lock;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -71,10 +70,18 @@ public class LockTests {
     }
 
     @Test
-    public void getId(){
+    public void getSetId(){
         String setId = "1";
         this.Lock.setId(setId);
         String idGet = this.Lock.getId();
+        assert(idGet == setId);
+    }
+
+    @Test
+    public void getSetUserId(){
+        String setId = "1";
+        this.Lock.setUserId(setId);
+        String idGet = this.Lock.getUserId();
         assert(idGet == setId);
     }
 
