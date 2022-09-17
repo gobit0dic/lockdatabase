@@ -27,6 +27,7 @@ public class LockServiceImpl implements LockService {
         lockRecord.setDateTime(String.valueOf(LocalDateTime.now()));
         String lockId = calculateLockId(lockRecord);
         lockRecord.setId(lockId);
+        lockRecord.setUserId("1");
         boolean wasSuccess = false;
         if(checkForFilledRecord(lockRecord)){
             wasSuccess = serviceInterface.writeLock(lockRecord);

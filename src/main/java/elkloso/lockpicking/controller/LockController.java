@@ -27,11 +27,9 @@ public class LockController {
         return lockFactory.getSingleLock(lockId);
     }
 
-    //TODO Cant write bc of ] symbol
     @PostMapping("/lock")
     public boolean writeLock(@RequestBody Lock lock) {
-        lockFactory.writeLock(lock);
-        return true;
+        return lockFactory.writeLock(lock);
     }
 
     //TODO Delete just a part
