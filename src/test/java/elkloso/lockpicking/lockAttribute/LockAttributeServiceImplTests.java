@@ -39,6 +39,7 @@ public class LockAttributeServiceImplTests {
         when(serviceInterface.getLockAttributes())
                 .thenReturn(lockAttribute);
         LockAttribute lockAttributes = lockAttributeService.getLockAttributes();
+        System.out.println(lockAttributes.getPinTypes());
         assert(lockAttributes.getPinTypes() == null);
         assert(lockAttributes.getLockTypes() == null);
         assert(lockAttributes.getWrenchTypes() == null);

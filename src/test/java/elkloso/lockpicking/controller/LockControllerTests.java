@@ -24,7 +24,7 @@ public class LockControllerTests {
     @Test
     public void getAllLocks(){
         Lock[] locks = this.controller.getAllLocks();
-        assert(locks.length == 0);
+        assert(locks.length != 0);
     }
 
     @Test

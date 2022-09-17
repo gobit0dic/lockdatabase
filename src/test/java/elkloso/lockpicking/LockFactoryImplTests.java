@@ -79,7 +79,7 @@ public class LockFactoryImplTests {
         lock.setId(id);
         LockFactoryImpl lockFactory = new LockFactoryImpl();
         boolean response = lockFactory.deleteLock(lock);
-        assert(response);
+        assert(!response);
     }
 
 }

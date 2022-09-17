@@ -44,6 +44,9 @@ public class LockRepository {
     public Lock getSingleLock(String lockId){
         Lock[] allLocks = getAllLocks();
         for(Lock lock : allLocks){
+            if(lock.getId() == null){
+                continue;
+            }
             if(lock.getId().equals(lockId)){
                 return lock;
             }
@@ -123,6 +126,9 @@ public class LockRepository {
             Lock[] allLocksNew = new Lock[allLocks.length-1];
             int index = 0;
             for(Lock lockFromAll : allLocks){
+                if(lock.getId() == null){
+                    continue;
+                }
                 if(!lockFromAll.getId().equals(lock.getId())){
                     allLocksNew[index] = lockFromAll;
                 }
