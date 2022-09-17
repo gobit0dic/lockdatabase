@@ -16,11 +16,6 @@ Similar for the data model. The entity objects should not interact with the busi
 The business logic should just use DTO to perform action. 
 With this approach, I can change the API layer or data layer in future without having to change the business logic.
 
-### Known flats of the data structure
-- I decided to use flat files (json) instead of e.g. a h2 database
-- That's not a scalable approach but the business rules should be agnostic to database or GUI
-- Because of not using h2, I have to generate the hypertext by myself
-
 ### User Story 
 The idea is to build a simple app to create and read records which represents locks. 
 As somebody doing lockpicking as a hobby, you will deal with a lot of locks while practicing.
@@ -32,6 +27,6 @@ In addition, you want to retrieve the locks and get some saved attributes like n
 - RESTful APIs
 
 ### Ideas for future development
-- Multi-tenancy feature with login
+- Multi-user feature
 - oAuth / FIDO authentication
 - React frontend
