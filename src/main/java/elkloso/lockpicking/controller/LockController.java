@@ -14,29 +14,27 @@ public class LockController {
     //TODO RESTful
     @GetMapping("/lockattributes")
     public LockAttribute getLockAttributes() {
-        LockAttribute lockAttributes = lockAttributeFactory.getLockAttributes();
-        return lockAttributes;
+        return lockAttributeFactory.getLockAttributes();
     }
 
     @GetMapping("/locks")
     public Lock[] getAllLocks() {
-        Lock[] locks = lockFactory.getAllLocks();
-        return locks;
+        return lockFactory.getAllLocks();
     }
 
     @GetMapping("/lock/{lockId}")
     public Lock getSingleLock(@PathVariable String lockId) {
-        Lock lock = lockFactory.getSingleLock(lockId);
-        return lock;
+        return lockFactory.getSingleLock(lockId);
     }
 
-    //TODO Return Value
+    //TODO Cant write bc of ] symbol
     @PostMapping("/lock")
     public boolean writeLock(@RequestBody Lock lock) {
         lockFactory.writeLock(lock);
         return true;
     }
 
+    //TODO Delete just a part
     @PostMapping("/lock/{lockId}/delete")
     public boolean deleteLock(@PathVariable String lockId) {
         Lock lock = new Lock(){};

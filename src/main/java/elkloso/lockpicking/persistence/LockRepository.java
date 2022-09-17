@@ -42,7 +42,7 @@ public class LockRepository {
     public Lock getSingleLock(String lockId){
         Lock[] allLocks = getAllLocks();
         for(Lock lock : allLocks){
-            if(lock.getId() == lockId){
+            if(lock.getId().equals(lockId)){
                 return lock;
             }
         }
@@ -54,6 +54,14 @@ public class LockRepository {
         if(!file.exists() && !file.isDirectory()) {
             try{
                 boolean isSuccess = file.createNewFile();
+                if(isSuccess){
+                    String fileContent = "[]";
+                    Files.write(
+                            Paths.get(this.finalPath),
+                            fileContent.getBytes(),
+                            StandardOpenOption.WRITE
+                    );
+                }
             }catch(Exception e){
                 System.out.println(e);
             }
@@ -68,7 +76,7 @@ public class LockRepository {
             System.out.println(e);
             return false;
         }
-        String contentToAppend = jsonString + System.lineSeparator();
+        String contentToAppend = jsonString + "," + System.lineSeparator();
         try {
             Files.write(
                     Paths.get(this.finalPath),
@@ -91,7 +99,7 @@ public class LockRepository {
             return false;
         }
 
-        String fileContent = jsonString + System.lineSeparator();
+        String fileContent = jsonString;
         try {
             Files.write(
                     Paths.get(this.finalPath),
