@@ -32,7 +32,6 @@ public class LockController {
         return lockFactory.writeLock(lock);
     }
 
-    //TODO Delete just a part
     @PostMapping("/lock/{lockId}/delete")
     public boolean deleteLock(@PathVariable String lockId) {
         Lock lock = new Lock(){};

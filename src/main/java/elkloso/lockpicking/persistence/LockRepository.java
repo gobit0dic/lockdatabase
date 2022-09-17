@@ -103,7 +103,6 @@ public class LockRepository {
             System.out.println("JsonProcessingException: " + e);
             return false;
         }
-
         String fileContent = jsonString;
         try {
             Files.write(
@@ -124,7 +123,7 @@ public class LockRepository {
             Lock[] allLocksNew = new Lock[allLocks.length-1];
             int index = 0;
             for(Lock lockFromAll : allLocks){
-                if(lockFromAll.getId() != lock.getId()){
+                if(!lockFromAll.getId().equals(lock.getId())){
                     allLocksNew[index] = lockFromAll;
                 }
                 index++;
