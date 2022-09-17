@@ -58,8 +58,8 @@ public class LockServiceImplTests {
         lock.setName("TestName");
         LockService serviceInterface = mock(LockService.class);
         LockServiceImpl lockService = new LockServiceImpl(serviceInterface);
-        boolean response = lockService.writeLock(lock);
-        assert(!response);
+        Lock lockReturn = lockService.writeLock(lock);
+        assert(lockReturn == null);
     }
 
     @Test
@@ -69,8 +69,8 @@ public class LockServiceImplTests {
         lock.setId(id);
         LockService serviceInterface = mock(LockService.class);
         LockServiceImpl lockService = new LockServiceImpl(serviceInterface);
-        boolean response = lockService.writeLock(lock);
-        assert(!response);
+        Lock lockReturn = lockService.writeLock(lock);
+        assert(lockReturn == null);
     }
 
     @Test

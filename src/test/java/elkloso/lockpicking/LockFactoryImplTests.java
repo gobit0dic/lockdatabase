@@ -23,8 +23,8 @@ public class LockFactoryImplTests {
         lock.setUserId("1");
 
         LockFactoryImpl lockFactory = new LockFactoryImpl();
-        boolean wasSuccess = lockFactory.writeLock(lock);
-        assert(wasSuccess);
+        Lock lockReturn = lockFactory.writeLock(lock);
+        assert(lockReturn.getId() != null);
 
         String path = System.getProperty("user.dir") + "/mockDatabase/locks/1.json";
 
@@ -49,8 +49,8 @@ public class LockFactoryImplTests {
     public void writeLockEmptyRecord(){
         Lock lock = new Lock();
         LockFactoryImpl lockFactory = new LockFactoryImpl();
-        boolean wasSuccess = lockFactory.writeLock(lock);
-        assert(!wasSuccess);
+        Lock lockReturn = lockFactory.writeLock(lock);
+        assert(lockReturn == null);
 
         String path = System.getProperty("user.dir") + "/mockDatabase/locks/null.json";
 

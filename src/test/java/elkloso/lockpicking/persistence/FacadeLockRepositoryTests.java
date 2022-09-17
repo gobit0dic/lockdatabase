@@ -14,8 +14,8 @@ public class FacadeLockRepositoryTests {
         lock.setUserId(id);
         lock.setName("TestName");
         FacadeLockRepository facadeLockRepository = new FacadeLockRepository();
-        boolean isSucces = facadeLockRepository.writeLock(lock);
-        assert(isSucces);
+        Lock lockReturn = facadeLockRepository.writeLock(lock);
+        assert(lockReturn.getId() == null);
     }
 
     @Test

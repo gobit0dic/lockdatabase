@@ -7,7 +7,7 @@ import elkloso.lockpicking.persistence.FacadeLockRepository;
 
 public class LockFactoryImpl extends LockFactory {
 
-    public boolean writeLock(Lock lock) {
+    public Lock writeLock(Lock lock) {
         LockServiceImpl lockServiceImpl = new LockServiceImpl(new FacadeLockRepository());
         return lockServiceImpl.writeLock(lock);
     }

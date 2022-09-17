@@ -7,7 +7,7 @@ public class FacadeLockRepository implements LockService {
 
     private static final String userId = "1"; //TODO UserHandling later
 
-    public boolean writeLock(Lock lockRecord){
+    public Lock writeLock(Lock lockRecord){
         try{
             LockRepository lockRepository = new LockRepository();
             lockRepository.setUserId(lockRecord.getUserId());
@@ -15,7 +15,7 @@ public class FacadeLockRepository implements LockService {
             lockRepository.createFileIfNotExists();
             return lockRepository.writeLock(lockRecord);
         }catch (Exception e){
-            return false;
+            return null;
         }
     }
 

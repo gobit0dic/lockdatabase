@@ -23,16 +23,15 @@ public class LockServiceImpl implements LockService {
         this.serviceInterface = serviceInterface;
     }
 
-    public boolean writeLock(Lock lockRecord){
+    public Lock writeLock(Lock lockRecord){
         lockRecord.setDateTime(String.valueOf(LocalDateTime.now()));
         String lockId = calculateLockId(lockRecord);
         lockRecord.setId(lockId);
         lockRecord.setUserId("1");
-        boolean wasSuccess = false;
         if(checkForFilledRecord(lockRecord)){
-            wasSuccess = serviceInterface.writeLock(lockRecord);
+            return serviceInterface.writeLock(lockRecord);
         }
-        return wasSuccess;
+        return null;
     }
 
     public boolean deleteLock(Lock lockRecord){

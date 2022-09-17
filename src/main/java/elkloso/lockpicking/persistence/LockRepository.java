@@ -8,8 +8,6 @@ import java.io.File;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
-import java.util.ArrayList;
-import java.util.List;
 
 public class LockRepository {
     private static final String path = System.getProperty("user.dir") + "/mockDatabase/locks/";
@@ -73,7 +71,7 @@ public class LockRepository {
         }
     }
 
-    public boolean writeLock(Lock lockRecord){
+    public Lock writeLock(Lock lockRecord){
         Lock[] allLocks = getAllLocks();
         Lock[] allLocksNew = new Lock[allLocks.length + 1];
         int index = 0;
@@ -91,10 +89,10 @@ public class LockRepository {
                     jsonString.getBytes(),
                     StandardOpenOption.WRITE
             );
-            return true;
+            return lockRecord;
         } catch (Exception e) {
             System.out.println(e);
-            return false;
+            return null;
         }
     }
 

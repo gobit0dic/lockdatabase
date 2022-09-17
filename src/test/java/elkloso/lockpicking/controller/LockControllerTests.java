@@ -6,6 +6,7 @@ import elkloso.lockpicking.lockEntries.LockService;
 import elkloso.lockpicking.lockEntries.LockServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.HttpEntity;
 
 import static org.mockito.Mockito.mock;
 
@@ -17,20 +18,20 @@ public class LockControllerTests {
     //TODO
     @Test
     public void getLockAttributes(){
-      LockAttribute lockAttribute = this.controller.getLockAttributes();
-      assert(lockAttribute.getLockTypes().length != 0);
+        HttpEntity<LockAttributeDTO> lockAttribute = this.controller.getLockAttributes();
+        assert(lockAttribute.getBody().toString().length() != 0);
     }
 
     @Test
     public void getAllLocks(){
-        Lock[] locks = this.controller.getAllLocks();
-        assert(locks.length != 0);
+        HttpEntity<LockDTO> locks = this.controller.getAllLocks();
+        assert(locks.getBody().toString().length() != 0);
     }
 
     @Test
     public void getSingleLock(){
-        Lock lock = this.controller.getSingleLock("Test");
-        assert(lock == null);
+        HttpEntity<LockDTO> locks = this.controller.getSingleLock("Test");
+        assert(locks.getBody().toString().length() != 0);
     }
 
     @Test
@@ -39,8 +40,8 @@ public class LockControllerTests {
         String id = "Test";
         lock.setUserId(id);
         lock.setName("TestName");
-        boolean response = this.controller.writeLock(lock);
-        assert(response);
+        HttpEntity<LockDTO> locks = this.controller.writeLock(lock);
+        assert(locks.getBody().toString().length() != 0);
     }
 
     @Test

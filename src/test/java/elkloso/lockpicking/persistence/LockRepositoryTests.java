@@ -16,8 +16,8 @@ public class LockRepositoryTests {
         LockRepository lockRepository  = new LockRepository();
         lockRepository.setUserId("Test");
         lockRepository.setFilename();
-        boolean isSucces = lockRepository.writeLock(lock);
-        assert(isSucces);
+        Lock lockReturn = lockRepository.writeLock(lock);
+        assert(lockReturn != null);
     }
 
     @Test
