@@ -24,7 +24,7 @@ In addition, you want to retrieve the locks and get some saved attributes like n
 
 ### Todo
 - Software Architecture Diagram to ReadMe
-- RESTful APIs
+- Refine Unit Tests
 
 ### Ideas for future development
 - Multi-user feature
